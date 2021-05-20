@@ -1,0 +1,24 @@
+<h2 class="text-center">Register</h2>
+<div class="form-container my-4 mx-auto">
+   <%= form_with model: @user, url: register_path, method: :post do |form| %>
+    <%= render 'shared/form_errors', form: form %>
+    <div class="mb-3">
+      <%= form.label :email %>
+      <%= form.email_field :email, class: 'mt-2 form-control' %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :password %>
+      <%= form.password_field :password, class: 'mt-2 form-control' %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation, class: 'mt-2 form-control' %>
+    </div>
+    <div class="d-grid gap-2 d-md-flex">
+      <%= link_to 'Go Home', root_path, class: 'btn btn-secondary col-md-6' %>
+      <%= form.submit 'Register', class: 'btn btn-primary col-md-6', type: 'submit' %>
+    </div>
+    <div>
+    </div>
+  <% end %>
+  </div>

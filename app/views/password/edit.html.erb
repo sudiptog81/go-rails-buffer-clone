@@ -1,0 +1,20 @@
+<h2 class="text-center">Change Password</h2>
+<div class="form-container my-4 mx-auto">
+  <%= form_with model: Current.user, url: change_password_path, method: :patch do |form| %>
+    <%= render 'shared/form_errors', form: form %>
+    <div class="mb-3">
+      <%= form.label :password %>
+      <%= form.password_field :password, class: 'mt-2 form-control' %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation, class: 'mt-2 form-control' %>
+    </div>
+    <div class="d-grid gap-2 d-md-flex">
+      <%= link_to 'Go Home', root_path, class: 'btn btn-secondary col-md-6' %>
+      <%= form.submit 'Change Password', class: 'btn btn-primary col-md-6', type: 'submit' %>
+    </div>
+    <div>
+    </div>
+  <% end %>
+</div>

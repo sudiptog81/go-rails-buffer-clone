@@ -1,0 +1,15 @@
+// Place all the styles related to the registration controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.form-container {
+  width: 30vw;
+
+  @media screen and (max-width: 1466px) {
+    width: 50vw;
+  }
+
+  @media screen and (max-width: 512px) {
+    width: 90vw;
+  }
+}
