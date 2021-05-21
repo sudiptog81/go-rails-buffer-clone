@@ -1,11 +1,7 @@
-<h2 class="text-center">Register</h2>
+<h2 class="text-center">Reset Password</h2>
 <div class="form-container my-4 mx-auto">
-   <%= form_with model: @user, url: register_path, method: :post do |form| %>
+  <%= form_with model: @user, url: reset_password_path(token: params[:token]), method: :patch do |form| %>
     <%= render 'shared/form_errors', form: form %>
-    <div class="mb-3">
-      <%= form.label :email %>
-      <%= form.email_field :email, class: 'mt-2 form-control' %>
-    </div>
     <div class="mb-3">
       <%= form.label :password %>
       <%= form.password_field :password, class: 'mt-2 form-control' %>
@@ -16,10 +12,9 @@
     </div>
     <div class="d-grid gap-2 d-md-flex">
       <%= link_to 'Go Home', root_path, class: 'btn btn-secondary col-md-6' %>
-      <%= form.submit 'Register', class: 'btn btn-primary col-md-6', type: 'submit' %>
+      <%= form.submit 'Reset Password', class: 'btn btn-primary col-md-6', type: 'submit' %>
     </div>
-    <div class="mt-4 text-center">
-      <%= link_to 'Forgot Password?', forgot_password_path %>
+    <div>
     </div>
   <% end %>
-  </div>
+</div>

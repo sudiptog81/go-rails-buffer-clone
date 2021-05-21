@@ -10,7 +10,7 @@ class RegistrationController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path, notice: 'Registered successfully'
+      redirect_to login_path, notice: 'Registered successfully.'
     else
       render :new
     end

@@ -1,0 +1,20 @@
+<h1>Buffer</h1>
+<h2>Reset Password</h2>
+<p>
+  Hi <%= params[:user].email %>,
+</p>
+<p>
+  Someone requested a reset of your password. If it was you, follow the instructions below. If not, let us know right
+  away.
+</p>
+<p>
+  In order to reset your password, <%= link_to 'click here', reset_password_url(token: @token) %>. The link will expire
+  automatically in 15 minutes.
+</p>
+<p>
+  In case the link is not clickable, navigate to <%= reset_password_url(token: @token) %>.
+</p>
+<p>
+  Regards,
+  Buffer Mailer
+</p>

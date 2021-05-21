@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  password_mailer:
+    reset:
+      subject: "Reset Password - Buffer"

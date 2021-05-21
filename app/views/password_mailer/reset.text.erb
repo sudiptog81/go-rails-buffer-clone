@@ -1,0 +1,14 @@
+Buffer
+
+Reset Password
+
+Hi <%= params[:user].email %>,
+
+Someone requested a reset of your password. If it was you, follow the instructions below. If not, let us know right away.
+
+In order to reset your password, navigate to the link below. The link will expire automatically in 15 minutes.
+
+<%= reset_password_url(token: @token) %>
+
+Regards,
+Buffer Mailer

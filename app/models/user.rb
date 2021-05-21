@@ -5,4 +5,6 @@ class User < ApplicationRecord
     with: URI::MailTo::EMAIL_REGEXP,
     message: 'must be a valid email address'
   }
+  validates :password, presence: true
+  validates :password_confirmation, presence: true
 end

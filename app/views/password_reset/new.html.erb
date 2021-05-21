@@ -1,0 +1,15 @@
+<h2 class="text-center">Reset Password</h2>
+<div class="form-container my-4 mx-auto">
+  <%= form_with url: forgot_password_path, method: :post do |form| %>
+    <div class="mb-3">
+      <%= form.label :email %>
+      <%= form.email_field :email, class: 'mt-2 form-control', required: true %>
+    </div>
+    <div class="d-grid gap-2 d-md-flex">
+      <%= link_to 'Go Home', root_path, class: 'btn btn-secondary col-md-6' %>
+      <%= form.submit 'Reset Password', class: 'btn btn-primary col-md-6', type: 'submit' %>
+    </div>
+    <div>
+    </div>
+  <% end %>
+</div>
