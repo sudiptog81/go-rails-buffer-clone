@@ -51,7 +51,11 @@ Change the database connection parameters in `config/database.yml` and run migra
 $ rails db:create db:migrate
 ```
 
-Create a Twitter 3-legged OAuth enabled application on the [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard) and note down the API key and secret. Populate the Rails credentials by running the following commands and entering the credentials in the given format.
+Create a Twitter 3-legged OAuth enabled application on the [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard) and note down the API key and secret.
+
+Get the SMTP credentials for the Forget Password functionality if using in production.
+
+Populate the Rails credentials by running the following commands and entering the credentials in the given format.
 
 ```bash
 $ rails credentials:edit --environment={development,production}
@@ -59,6 +63,13 @@ $ rails credentials:edit --environment={development,production}
 twitter:
   api_key: xxxxx
   api_secret: xxxxx
+  
+smtp:
+  from: xxxxx@xxxxx.com
+  host: xxxxx.com
+  port: 587
+  username: xxxxx
+  password: xxxxx
 ...
 ```
 

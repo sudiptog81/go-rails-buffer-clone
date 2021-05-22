@@ -119,4 +119,19 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
   config.active_job.queue_adapter = :sidekiq
+
+  config.action_mailer.delivery_method = :smtp
+
+  host = 'tweet-from-kepler-22b.herokuapp.com'
+
+  config.action_mailer.default_url_options = { host: host }
+
+  config.action_mailer.smtp_settings = {
+    :address              => Rails.application.credentials.dig(:smtp, :host),
+    :port                 => Rails.application.credentials.dig(:smtp, :port),
+    :user_name            => Rails.application.credentials.dig(:smtp, :username),
+    :password             => Rails.application.credentials.dig(:smtp, :password),
+    :authentication       => 'plain',
+    :enable_starttls_auto => true
+  }
 end
