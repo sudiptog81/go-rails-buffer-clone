@@ -1,24 +1,83 @@
-# README
+# Buffer Clone in RoR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Deployed Version: https://tweet-from-kepler-22b.herokuapp.com/
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+  - Ruby 3.0.1
+  - Ruby enVironment Manager 1.29.12-next 
+  - Bundler 2.2.15
+  - PostgreSQL 13.2
+  - Redis 6.2.3
+  - Git 2.31.1
 
-* System dependencies
+## Getting Started
 
-* Configuration
+Verify the development environment.
 
-* Database creation
+```bash
+$ rvm info
 
-* Database initialization
+ruby-3.0.1:
 
-* How to run the test suite
+  system:
+    ...
+    architecture: "x86_64"
+    ...
+    
+  rvm:
+    ...
+    version:      "1.29.12-next (master)"
+    ...
+    
+  ruby:
+    ...
+    interpreter:  "ruby"
+    version:      "3.0.1p64"
+    platform:     "x86_64-linux"
+    ...
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Clone the repository and install dependencies.
+```bash
+$ git clone https://github.com/sudiptog81/go-rails-buffer-clone.git
+$ cd go-rails-buffer-clone
+$ bundle install
+```
 
-* Deployment instructions
+Change the database connection parameters in `config/database.yml` and run migrations.
 
-* ...
+```bash
+$ rails db:create db:migrate
+```
+
+Create a Twitter 3-legged OAuth enabled application on the [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard) and note down the API key and secret. Populate the Rails credentials by running the following commands and entering the credentials in the given format.
+
+```bash
+$ rails credentials:edit --environment={development,production}
+...
+twitter:
+  api_key: xxxxx
+  api_secret: xxxxx
+...
+```
+
+Once the credentials have been added and `.key` files are present in `config/credentials`, run the application with the following commands in two different terminal windows.
+
+```bash
+$ rails s   # terminal A
+$ sidekiq   # terminal B
+```
+
+## Screenshots
+
+See [this folder](.github/).
+
+## Background
+
+This application was developed while as a project while learning to work with Ruby on Rails with the [Go Rails RoR](https://gorails.com/start) course by [Chris Oliver](https://github.com/excid3).
+
+## License
+
+The MIT Open Source License
+
