@@ -73,6 +73,8 @@ smtp:
 ...
 ```
 
+Change the `host` in `config/environments/production.rb`.
+
 Once the credentials have been added and `.key` files are present in `config/credentials`, run the application with the following commands in two different terminal windows.
 
 ```bash

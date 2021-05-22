@@ -124,7 +124,10 @@ Rails.application.configure do
 
   host = 'tweet-from-kepler-22b.herokuapp.com'
 
-  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.default_url_options = {
+    host: host,
+    protocol: 'https'
+  }
 
   config.action_mailer.smtp_settings = {
     :address              => Rails.application.credentials.dig(:smtp, :host),
