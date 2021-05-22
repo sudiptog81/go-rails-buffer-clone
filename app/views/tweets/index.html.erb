@@ -1,0 +1,14 @@
+<div class="d-flex align-items-center justify-content-between">
+  <h2 class="text-center">Tweets</h2>
+  <% if Current.user.twitter_accounts.any? %>
+    <div class="my-4">
+      <%= link_to 'Schedule Tweet', new_tweet_path, class: 'btn btn-lg btn-primary' %>
+    </div>
+  <% elsif Current.user.twitter_accounts.none? %>
+    <div class="my-4">
+      <%= button_to 'Connect Twitter', '/auth/twitter', method: :post, class: 'btn btn-lg btn-primary' %>
+    </div>
+  <% end %>
+</div>
+
+<%= render @tweets.order(created_at: :desc) %>

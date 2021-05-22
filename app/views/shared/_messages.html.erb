@@ -1,6 +1,6 @@
 <% if flash.any? %>
     <% flash.each do |name, message| %>
-      <div class="alert alert-<%= name.to_s == 'notice' ? 'info' : 'danger' %> alert-dismissible fade show m-4" role="alert">
+      <div class="alert alert-<%= name.to_s == 'notice' ? 'info' : 'danger' %> alert-dismissible fade show my-4" role="alert">
         <i class="fa fa-<%= name.to_s == 'notice' ? 'exclamation-circle' : 'exclamation-triangle' %>"></i>
         <%= content_tag :span, message, :id => "flash_#{name}", class: 'mx-2' %>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

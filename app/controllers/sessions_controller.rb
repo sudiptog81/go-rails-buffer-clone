@@ -1,4 +1,4 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
   def new
   end
 
@@ -8,7 +8,7 @@ class SessionController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path, notice: 'Logged in successfully.'
     else
-      flash[:alert] = 'Invalid email or password.'
+      flash[:alert] = 'Invalid email or passwords.'
       render :new
     end
   end

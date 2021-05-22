@@ -1,0 +1,14 @@
+<div class="card card-body mb-3 d-flex flex-row justify-content-between align-items-center">
+  <%= tweet.body %>
+  <div class="ms-4">
+    <% if tweet.published? %>
+      <%= link_to 'View', "https://twitter.com/#{tweet.twitter_account.username}/status/#{tweet.tweet_id}", target: :_blank %>
+    <% else %>
+      <span>Scheduled for <%= l tweet.publish_at, format: :long %></span>
+      <%= link_to 'Edit', edit_tweet_path(tweet) %>
+    <% end %>
+    <%= image_tag tweet.twitter_account.image, class: 'rounded-circle mx-2' %>
+    <%= link_to "@#{tweet.twitter_account.username}", "https://twitter.com/#{tweet.twitter_account.username}", target: :_blank %>
+  </div>
+</div>
+

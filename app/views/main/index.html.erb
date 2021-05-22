@@ -7,9 +7,3 @@
     <%= link_to 'Get Started', register_path, class: 'btn btn-primary btn-lg', type: 'button' %>
   </div>
 </div>
-
-<% if Current.user %>
-  <div class="d-flex align-items-center justify-content-center">
-    <%= button_to 'Authorize Twitter', '/auth/twitter', method: :post, class: 'btn btn-lg btn-primary' %>
-  </div>
-<% end %>

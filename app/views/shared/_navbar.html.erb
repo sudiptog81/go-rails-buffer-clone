@@ -7,11 +7,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <%= link_to 'Home', root_path, class: "nav-link #{link_active? root_path}" %>
-        </li>
-        <li class="nav-item">
           <%= link_to 'About', about_path, class: "nav-link #{link_active? about_path}" %>
         </li>
+        <% if Current.user %>
+          <li class="nav-item">
+            <%= link_to 'Tweets', tweets_path, class: "nav-link #{link_active? tweets_path}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Accounts', twitter_accounts_path, class: "nav-link #{link_active? twitter_accounts_path}" %>
+          </li>
+        <% end %>
       </ul>
       <div class="d-flex align-items-center">
         <% if Current.user %>

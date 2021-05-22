@@ -1,4 +1,4 @@
-class RegistrationController < ApplicationController
+class RegistrationsController < ApplicationController
   def new
     if Current.user.nil?
       @user = User.new

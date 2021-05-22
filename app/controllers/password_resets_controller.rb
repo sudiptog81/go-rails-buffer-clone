@@ -1,4 +1,4 @@
-class PasswordResetController < ApplicationController
+class PasswordResetsController < ApplicationController
   def new
   end
 
@@ -7,7 +7,7 @@ class PasswordResetController < ApplicationController
     if @user.present?
       PasswordMailer.with(user: @user).reset.deliver_later
     end
-    redirect_to root_path, notice: 'In case an account was found, a password reset link has been sent to your e-mail.'
+    redirect_to root_path, notice: 'In case an account was found, a passwords reset link has been sent to your e-mail.'
   end
 
   def edit
